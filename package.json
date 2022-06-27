@@ -1,0 +1,31 @@
+{
+  "name": "growing_back",
+  "version": "1.0.0",
+  "description": "Backend api for Growing App solution",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/softimo/growing.git"
+  },
+  "author": "Softimo Solutions",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/softimo/growing/issues"
+  },
+  "homepage": "https://github.com/softimo/growing#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.1"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.4.1"
+  }
+}
