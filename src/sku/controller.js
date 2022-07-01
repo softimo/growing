@@ -9,12 +9,12 @@ const {
 } = require("./data");
 
 async function createSkuController(req, res) {
-  const { codigo, descripcion, existencias } = req.body;
+  const { codigo, descripcion, existencias, precio, categoria } = req.body;
 
   const createdAt = new Date();
   const updatedAt = new Date();
 
-  await createSku(codigo, descripcion, existencias, createdAt, updatedAt);
+  await createSku(codigo, descripcion, existencias,precio, categoria, createdAt, updatedAt);
 
   return res.status(200).send({
     message: "SKU generado correctamente",

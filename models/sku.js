@@ -16,7 +16,9 @@ module.exports = (sequelize, DataTypes) => {
   Sku.init({
     codigo: DataTypes.STRING,
     descripcion: DataTypes.STRING,
-    existencias: DataTypes.INTEGER
+    existencias: DataTypes.INTEGER,
+    precio: DataTypes.FLOAT,
+    categoria: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Sku',

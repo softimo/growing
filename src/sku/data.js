@@ -5,6 +5,8 @@ async function createSku(
   codigo,
   descripcion,
   existencias,
+  precio,
+  categoria,
   createdAt,
   updatedAt
 ) {
@@ -14,12 +16,14 @@ async function createSku(
   }
 
   return await db.sequelize.query(
-    " INSERT INTO  skus (codigo, descripcion, existencias,createdAt,updatedAt) VALUES (:codigo, :descripcion, :existencias,:createdAt,:updatedAt)",
+    " INSERT INTO  skus (codigo, descripcion, existencias,precio, categoria,createdAt,updatedAt) VALUES (:codigo, :descripcion, :existencias,:precio,:categoria,:createdAt,:updatedAt)",
     {
       replacements: {
         codigo,
         descripcion,
         existencias,
+        precio,
+        categoria,
         createdAt,
         updatedAt,
       },
