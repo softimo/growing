@@ -14,7 +14,15 @@ async function createSkuController(req, res) {
   const createdAt = new Date();
   const updatedAt = new Date();
 
-  await createSku(codigo, descripcion, existencias,precio, categoria, createdAt, updatedAt);
+  await createSku(
+    codigo,
+    descripcion,
+    existencias,
+    precio,
+    categoria,
+    createdAt,
+    updatedAt
+  );
 
   return res.status(200).send({
     message: "SKU generado correctamente",
@@ -22,9 +30,7 @@ async function createSkuController(req, res) {
 }
 async function deleteSkuController(req, res) {
   const { id } = req.query;
-
   await deleteSku(id);
-
   return res.status(200).send({
     message: "SKU eliminado correctamente",
   });
@@ -41,8 +47,8 @@ async function updateSkuController(req, res) {
     return res.status(200).send({
       message: "SKU actualizado correctamente",
     });
-  } catch(e) {
-    console.log(e)
+  } catch (e) {
+    console.log(e);
     return res.status(403).send({
       message: "Ha ocurrido un error en la actualizacion de datos",
     });
