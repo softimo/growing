@@ -11,7 +11,7 @@ const {
 
 app.post("/create", createSkuController);
 app.get("/list", getAllSkuController);
-app.get("/", getByIdSkuController);
+app.get("/getone", getByIdSkuController);
 app.put("/update", updateSkuController);
 app.delete("/delete", deleteSkuController);
 

@@ -32,19 +32,20 @@ async function deleteUserController(req, res) {
   });
 }
 async function updateUserController(req, res) {
-  const { id, changes } = req.body;
-  const updatedAt = new Date();
   try {
+    const {id,changes }   = req.body
+    const updatedAt = new Date();
     for (const k of changes) {
       let field = k.field;
       let value = k.value;
       await updateUser(id, field, value, updatedAt);
     }
+    console.log(req.body)
     return res.status(200).send({
       message: "SKU actualizado correctamente",
     });
-  } catch(e) {
-    console.log(e)
+  } catch (e) {
+    console.log(e);
     return res.status(403).send({
       message: "Ha ocurrido un error en la actualizacion de datos",
     });
