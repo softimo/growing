@@ -6,6 +6,7 @@ const {
   updateSku,
   getAllSku,
   getByIdSku,
+  getAllSkuSearched
 } = require("./data");
 
 async function createSkuController(req, res) {
@@ -70,10 +71,22 @@ async function getByIdSkuController(req, res) {
     data: data,
   });
 }
+
+async function getAllSkuSearchedController(req, res) {
+  const {searchterm} = req.query
+  let SKUlist = await getAllSkuSearched(searchterm);
+
+  return res.status(200).send({
+    data: SKUlist,
+  });
+}
+
+
 module.exports = {
   createSkuController,
   deleteSkuController,
   updateSkuController,
   getAllSkuController,
   getByIdSkuController,
+  getAllSkuSearchedController
 };

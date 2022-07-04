@@ -8,6 +8,7 @@ const {
   updateUser,
   getAllUser,
   getByIdUser,
+  
 } = require("./data");
 
 async function createUserController(req, res) {
@@ -67,6 +68,7 @@ async function getByIdUserController(req, res) {
     data: data,
   });
 }
+
 module.exports = {
   createUserController,
   deleteUserController,

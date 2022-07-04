@@ -61,6 +61,16 @@ async function getAllSku() {
       );
 }
 
+async function getAllSkuSearched(searchTerm) {
+  return await db.sequelize.query(
+      `SELECT * FROM skus WHERE codigo LIKE %${searchTerm}% OR WHERE descripcion LIKE %${searchTerm}%  `,
+      {
+        replacements: {searchTerm},
+        type: sequelize.QueryTypes.SELECT,
+      }
+    );
+}
+
 async function getByIdSku(id) {
     return await db.sequelize.query(
         ` SELECT * FROM skus WHERE id=:id `,
@@ -79,4 +89,5 @@ module.exports = {
   updateSku,
   getAllSku,
   getByIdSku,
+  getAllSkuSearched
 };

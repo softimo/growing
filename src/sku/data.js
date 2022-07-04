@@ -77,10 +77,22 @@ async function getByIdSku(id) {
       );
 }
 
+async function getAllSkuSearched(searchTerm) {
+  
+  return await db.sequelize.query(
+      `SELECT * FROM skus WHERE descripcion LIKE '%${searchTerm}%'`,
+      {
+        replacements: {searchTerm: searchTerm},
+        type: sequelize.QueryTypes.SELECT,
+      }
+    );
+}
+
 module.exports = {
   createSku,
   deleteSku,
   updateSku,
   getAllSku,
   getByIdSku,
+  getAllSkuSearched
 };
